@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Buy Products</h2>
+
+    <label>Filter by Category:</label>
+    <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="phone">Phone</option>
+        <option value="clothe">Clothes</option>
+        <option value="car">Car</option>
+    </select>
+
+    <label>Filter by Price:</label>
+    <select id="priceFilter">
+        <option value="all">All</option>
+        <option value="1-100">1 - 100</option>
+        <option value="101-200">101 - 200</option>
+        <option value="201-500">201 - 500</option>
+        <option value="501-1000">501 - 1000</option>
+    </select>
+
+    <div id="productList"></div>
+
+    <button onclick="logout()">Logout</button>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="fullImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

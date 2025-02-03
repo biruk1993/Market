@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Product</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Sell a Product</h2>
+    <form id="sellForm">
+        <label>Category:</label>
+        <select id="category">
+            <option value="phone">Phone</option>
+            <option value="clothe">Clothes</option>
+            <option value="car">Car</option>
+        </select>
+
+        <label>Product Name:</label>
+        <input type="text" id="productName" required>
+
+        <label>Price:</label>
+        <input type="number" id="price" required>
+
+        <label>City:</label>
+        <select id="city">
+            <option value="Addis Ababa">Addis Ababa</option>
+            <option value="Adama">Adama</option>
+            <option value="Hawassa">Hawassa</option>
+            <option value="Shashemene">Shashemene</option>
+            <option value="Bahir Dar">Bahir Dar</option>
+            <option value="Dire Dawa">Dire Dawa</option>
+        </select>
+
+        <label>Contact Number:</label>
+        <input type="tel" id="contact" required>
+
+        <label>Upload Image:</label>
+        <input type="file" id="productImage" accept="image/*" required>
+
+        <button type="submit">Post Product</button>
+    </form>
+    
+    <button onclick="goTo('index.html')">Back</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
