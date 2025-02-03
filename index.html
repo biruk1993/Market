@@ -6,34 +6,18 @@
     <title>Marketplace</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onload="checkConnection()">
+<body>
+    <h1>Welcome to the Marketplace</h1>
+    <button onclick="window.location.href='sell.html'">Sell Product</button>
+    <button onclick="window.location.href='buy.html'">Buy Product</button>
+    <button onclick="logout()">Logout</button>
 
-    <div id="loading">Checking Internet Connection...</div>
-
-    <div id="options" class="hidden">
-        <h2>Welcome to the Marketplace</h2>
-        <button onclick="location.href='sell.html'">Sell</button>
-        <button onclick="location.href='buy.html'">Buy</button>
-    </div>
-
+    <script src="firebase.js"></script>
     <script>
-        function checkConnection() {
-            let loadingScreen = document.getElementById("loading");
-            let optionScreen = document.getElementById("options");
-
-            function updateStatus() {
-                if (navigator.onLine) {
-                    loadingScreen.style.display = "none";
-                    optionScreen.style.display = "block";
-                } else {
-                    loadingScreen.innerHTML = "No Internet Connection. Please check your network.";
-                    optionScreen.style.display = "none";
-                }
-            }
-            setInterval(updateStatus, 2000);
-            updateStatus();
+        function logout() {
+            alert("Logged out!");
+            window.location.href = "index.html";
         }
     </script>
-
 </body>
 </html>
