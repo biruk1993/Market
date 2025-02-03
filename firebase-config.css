@@ -1,6 +1,6 @@
 // Import Firebase
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
+    apiKey: "AIzaSyDc0E6G_zM79p2wVJDgm8bX1tzaWb8_OuE",
     authDomain: "market-fb791.firebaseapp.com",
     projectId: "market-fb791",
     storageBucket: "market-fb791.appspot.com",
