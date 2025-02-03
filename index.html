@@ -8,16 +8,32 @@
 </head>
 <body onload="checkConnection()">
 
-    <div id="loading">
-        <h2>Checking Internet Connection...</h2>
-    </div>
+    <div id="loading">Checking Internet Connection...</div>
 
     <div id="options" class="hidden">
-        <h1>Welcome to the Marketplace</h1>
-        <button onclick="goTo('sell.html')">Sell</button>
-        <button onclick="goTo('buy.html')">Buy</button>
+        <h2>Welcome to the Marketplace</h2>
+        <button onclick="location.href='sell.html'">Sell</button>
+        <button onclick="location.href='buy.html'">Buy</button>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function checkConnection() {
+            let loadingScreen = document.getElementById("loading");
+            let optionScreen = document.getElementById("options");
+
+            function updateStatus() {
+                if (navigator.onLine) {
+                    loadingScreen.style.display = "none";
+                    optionScreen.style.display = "block";
+                } else {
+                    loadingScreen.innerHTML = "No Internet Connection. Please check your network.";
+                    optionScreen.style.display = "none";
+                }
+            }
+            setInterval(updateStatus, 2000);
+            updateStatus();
+        }
+    </script>
+
 </body>
 </html>
