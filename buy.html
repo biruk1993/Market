@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Available Products</h2>
+    <h1>Buy Products</h1>
 
-    <label>Filter by Category:</label>
-    <select id="categoryFilter">
-        <option value="All">All</option>
-        <option value="Phone">Phone</option>
-        <option value="Clothes">Clothes</option>
-        <option value="Car">Car</option>
+    <label>Filter:</label>
+    <select id="filterCategory">
+        <option value="">All</option>
+        <option value="phone">Phone</option>
+        <option value="clothing">Clothing</option>
+        <option value="car">Car</option>
+    </select>
+    
+    <select id="filterPrice">
+        <option value="">All Prices</option>
+        <option value="1-100">1-100</option>
+        <option value="101-200">101-200</option>
+        <option value="201-500">201-500</option>
+        <option value="501-1000">501-1000</option>
     </select>
 
-    <label>Filter by Price:</label>
-    <select id="priceFilter">
-        <option value="All">All</option>
-        <option value="1-100">1 - 100</option>
-        <option value="101-200">101 - 200</option>
-        <option value="201-500">201 - 500</option>
-        <option value="501-1000">501 - 1000</option>
-    </select>
+    <button onclick="filterProducts()">Apply Filter</button>
 
     <div id="products"></div>
+    <button onclick="window.location.href='index.html'">Back to Home</button>
 
-    <button onclick="logout()">Logout</button>
-
-    <script src="firebase-config.js"></script>
+    <script src="firebase.js"></script>
     <script src="buy.js"></script>
 </body>
 </html>
