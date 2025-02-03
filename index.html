@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkConnection()">
+
+    <div id="loading">
+        <h2>Checking Internet Connection...</h2>
+    </div>
+
+    <div id="options" class="hidden">
+        <h1>Welcome to the Marketplace</h1>
+        <button onclick="goTo('sell.html')">Sell</button>
+        <button onclick="goTo('buy.html')">Buy</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
