@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Sell a Product</h2>
+    <h2>Sell Your Product</h2>
     <form id="sellForm">
         <label>Category:</label>
         <select id="category">
-            <option value="phone">Phone</option>
-            <option value="clothe">Clothes</option>
-            <option value="car">Car</option>
+            <option value="Phone">Phone</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Car">Car</option>
         </select>
 
         <label>Product Name:</label>
@@ -33,16 +33,15 @@
         </select>
 
         <label>Contact Number:</label>
-        <input type="tel" id="contact" required>
+        <input type="text" id="contact" required>
 
         <label>Upload Image:</label>
-        <input type="file" id="productImage" accept="image/*" required>
+        <input type="file" id="image" required>
 
         <button type="submit">Post Product</button>
     </form>
-    
-    <button onclick="goTo('index.html')">Back</button>
-    
-    <script src="script.js"></script>
+
+    <script src="firebase-config.js"></script>
+    <script src="sell.js"></script>
 </body>
 </html>
