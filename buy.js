@@ -1,27 +1,32 @@
 async function loadProducts() {
     let productsDiv = document.getElementById("products");
-    productsDiv.innerHTML = "";
+    productsDiv.innerHTML = "<p>Loading products...</p>";
 
-    let querySnapshot = await db.collection("products").get();
-    querySnapshot.forEach((doc) => {
-        let data = doc.data();
-        let productElement = `
-            <div class="product">
-                <img src="${data.image}" onclick="viewImage('${data.image}')">
-                <h3>${data.productName}</h3>
-                <p>Price: ${data.price}</p>
-                <p>City: ${data.city}</p>
-                <p>Contact: ${data.contact}</p>
-            </div>
-        `;
-        productsDiv.innerHTML += productElement;
-    });
+    try {
+        let querySnapshot = await getDocs(collection(db, "products"));
+        productsDiv.innerHTML = "";
+
+        querySnapshot.forEach((doc) => {
+            let data = doc.data();
+            let productElement = `
+                <div class="product">
+                    <img src="${data.image}" onclick="viewImage('${data.image}')">
+                    <h3>${data.productName}</h3>
+                    <p>Price: ${data.price}</p>
+                    <p>City: ${data.city}</p>
+                    <p>Contact: ${data.contact}</p>
+                </div>
+            `;
+            productsDiv.innerHTML += productElement;
+        });
+
+    } catch (error) {
+        console.error("Error fetching products:", error);
+    }
 }
 
 function viewImage(imageUrl) {
-    let newWindow = window.open();
-    newWindow.document.write(`<img src="${imageUrl}" style="width:100%">`);
+    window.open(imageUrl, "_blank");
 }
 
 window.onload = loadProducts;
-
